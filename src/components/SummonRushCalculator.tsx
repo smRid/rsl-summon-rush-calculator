@@ -155,7 +155,7 @@ export default function SummonRushCalculator() {
             width={800}
             height={200}
             priority
-            className="mx-auto h-auto w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[460px] 2xl:max-w-[580px]"
+            className="mx-auto h-auto w-full max-w-[200px] sm:max-w-[250px] lg:max-w-[360px] 2xl:max-w-[580px]"
           />
         </header>
 
@@ -164,7 +164,7 @@ export default function SummonRushCalculator() {
           className={cn(
             "mb-3 rounded-2xl border border-white/10 backdrop-blur-md",
             "bg-gradient-to-br from-purple-500/10 via-slate-900/50 to-blue-500/10",
-            "p-3 lg:p-4 shadow-xl"
+            "p-3 lg:p-4 shadow-xl mt-10"
           )}
         >
           <div className="flex flex-col min-[900px]:relative min-[900px]:min-h-12 lg:min-h-16 min-[900px]:flex-row items-stretch min-[900px]:items-center gap-3 lg:gap-4">
