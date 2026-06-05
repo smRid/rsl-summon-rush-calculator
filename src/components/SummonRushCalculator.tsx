@@ -148,7 +148,7 @@ export default function SummonRushCalculator() {
 
       <div className="relative z-10 max-w-5xl lg:max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 lg:px-6 pt-3 pb-8 sm:pt-5 sm:pb-12">
         {/* ── Header ── */}
-        <header className="text-center mb-5">
+        <header className="text-center mb-3">
           <Image
             src="/images/Header-main.png"
             alt="Summon Rush Calculator"
@@ -162,9 +162,9 @@ export default function SummonRushCalculator() {
         {/* ── Target Input ── */}
         <div
           className={cn(
-            "mb-8 rounded-2xl border border-white/10 backdrop-blur-md",
+            "mb-3 rounded-2xl border border-white/10 backdrop-blur-md",
             "bg-gradient-to-br from-purple-500/10 via-slate-900/50 to-blue-500/10",
-            "p-3 lg:p-5 shadow-xl"
+            "p-3 lg:p-4 shadow-xl"
           )}
         >
           <div className="flex flex-col min-[900px]:relative min-[900px]:min-h-12 lg:min-h-16 min-[900px]:flex-row items-stretch min-[900px]:items-center gap-3 lg:gap-4">
@@ -234,8 +234,8 @@ export default function SummonRushCalculator() {
         </div>
 
         {/* ── Progress Bar ── */}
-          <div className="mt-4 lg:mt-5 border-t border-white/10 pt-4 lg:pt-5">
-          <div className="flex items-center justify-between mb-3 lg:mb-4">
+          <div className="mt-2 lg:mt-3 border-t border-white/10 pt-2 lg:pt-3">
+          <div className="flex items-center justify-between mb-2 lg:mb-3">
             <span className="text-sm lg:text-base font-medium text-slate-300">
               Summon Rush Progress
             </span>
@@ -299,8 +299,8 @@ export default function SummonRushCalculator() {
         {/* ── Shard Cards Grid ── */}
         </div>
 
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-4 lg:mb-5">
+        <div className="mb-3">
+          <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg lg:text-2xl font-bold text-white flex items-center gap-2 lg:gap-3">
               <span className="w-1 lg:w-1.5 h-5 lg:h-7 rounded-full bg-gradient-to-b from-purple-400 to-blue-400 inline-block" />
               Your Shards
@@ -338,7 +338,7 @@ export default function SummonRushCalculator() {
         {/* ── Add Custom Shard ── */}
         {/* ── Action Buttons ── */}
         {/* ── Footer ── */}
-        <footer className="mt-12 text-center">
+        <footer className="mt-4 text-center">
           <p className="text-xs text-slate-700">
             Summon Rush Calculator · Raid: Shadow Legends Utility Tool
           </p>
