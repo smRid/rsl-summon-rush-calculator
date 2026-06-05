@@ -40,9 +40,9 @@ export default function ShardCard({
   return (
     <div
       className={cn(
-        "group relative rounded-xl xl:rounded-2xl border border-white/10 backdrop-blur-md",
+        "group relative rounded-xl lg:rounded-2xl border border-white/10 backdrop-blur-md",
         "bg-gradient-to-br from-white/[0.06] to-white/[0.02]",
-        "p-3 xl:p-4 flex flex-col gap-2 xl:gap-3",
+        "p-3 lg:p-4 flex flex-col gap-2 lg:gap-3",
         "transition-all duration-300",
         "hover:border-white/20 hover:shadow-xl hover:scale-[1.01]",
         quantity > 0 && "border-white/15"
@@ -71,11 +71,11 @@ export default function ShardCard({
       )}
 
       {/* Top: icon + name */}
-      <div className="flex items-center gap-2 xl:gap-3">
+      <div className="flex items-center gap-2 lg:gap-3">
         {/* Shard icon orb */}
         <div
           className={cn(
-            "w-10 h-10 xl:w-14 xl:h-14 rounded-lg xl:rounded-xl flex items-center justify-center text-xl xl:text-2xl",
+            "w-10 h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl flex items-center justify-center text-xl lg:text-2xl",
             "bg-gradient-to-br",
             shard.gradient,
             "shadow-lg flex-shrink-0 overflow-hidden"
@@ -96,22 +96,22 @@ export default function ShardCard({
         </div>
 
         <div className="flex-1 min-w-0">
-          <p className="font-semibold text-white text-xs xl:text-base leading-tight truncate">
+          <p className="font-semibold text-white text-xs lg:text-base leading-tight truncate">
             {shard.name}
           </p>
-          <p className="text-[10px] xl:text-sm text-slate-400 mt-0.5">
+          <p className="text-[10px] lg:text-sm text-slate-400 mt-0.5">
             {shard.pointsEach.toLocaleString()} pts each
           </p>
         </div>
       </div>
 
       {/* Quantity controls */}
-      <div className="grid grid-cols-[1.75rem_minmax(0,1fr)_1.75rem] xl:grid-cols-[2.25rem_minmax(0,1fr)_2.25rem] items-center gap-1.5 xl:gap-2 min-w-0">
+      <div className="grid grid-cols-[1.75rem_minmax(0,1fr)_1.75rem] lg:grid-cols-[2.25rem_minmax(0,1fr)_2.25rem] items-center gap-1.5 lg:gap-2 min-w-0">
         <button
           onClick={handleDecrement}
           disabled={quantity === 0}
           className={cn(
-            "w-7 h-7 xl:w-9 xl:h-9 rounded-lg xl:rounded-xl flex items-center justify-center cursor-pointer",
+            "w-7 h-7 lg:w-9 lg:h-9 rounded-lg lg:rounded-xl flex items-center justify-center cursor-pointer",
             "border border-white/10 bg-white/5",
             "transition-all duration-150 active:scale-95",
             "hover:bg-white/10 hover:border-white/20",
@@ -119,8 +119,8 @@ export default function ShardCard({
           )}
           aria-label="Decrease quantity"
         >
-          <Minus size={12} className="text-white xl:hidden" />
-          <Minus size={14} className="text-white hidden xl:block" />
+          <Minus size={12} className="text-white lg:hidden" />
+          <Minus size={14} className="text-white hidden lg:block" />
         </button>
 
         <input
@@ -132,8 +132,8 @@ export default function ShardCard({
           onFocus={(e) => e.currentTarget.select()}
           className={cn(
             "min-w-0 w-full text-center font-bold text-white tabular-nums",
-            "bg-white/5 border border-white/10 rounded-lg xl:rounded-xl",
-            "h-7 xl:h-9 px-1.5 xl:px-2 text-xs xl:text-sm",
+            "bg-white/5 border border-white/10 rounded-lg lg:rounded-xl",
+            "h-7 lg:h-9 px-1.5 lg:px-2 text-xs lg:text-sm",
             "focus:outline-none focus:border-white/30 focus:bg-white/10",
             "transition-all duration-150",
             "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
@@ -145,7 +145,7 @@ export default function ShardCard({
         <button
           onClick={handleIncrement}
           className={cn(
-            "w-7 h-7 xl:w-9 xl:h-9 rounded-lg xl:rounded-xl flex items-center justify-center cursor-pointer",
+            "w-7 h-7 lg:w-9 lg:h-9 rounded-lg lg:rounded-xl flex items-center justify-center cursor-pointer",
             "transition-all duration-150 active:scale-95",
             "text-white font-bold"
           )}
@@ -155,15 +155,15 @@ export default function ShardCard({
           }}
           aria-label="Increase quantity"
         >
-          <Plus size={12} className="xl:hidden" />
-          <Plus size={14} className="hidden xl:block" />
+          <Plus size={12} className="lg:hidden" />
+          <Plus size={14} className="hidden lg:block" />
         </button>
       </div>
 
       {/* Glow overlay when active */}
       {quantity > 0 && (
         <div
-          className="absolute inset-0 rounded-xl xl:rounded-2xl pointer-events-none opacity-5"
+          className="absolute inset-0 rounded-xl lg:rounded-2xl pointer-events-none opacity-5"
           style={{
             background: `radial-gradient(circle at 50% 0%, ${shard.color}, transparent 70%)`,
           }}

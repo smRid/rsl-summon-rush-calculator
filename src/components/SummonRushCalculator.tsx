@@ -146,7 +146,7 @@ export default function SummonRushCalculator() {
         <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-2000" />
       </div>
 
-      <div className="relative z-10 max-w-5xl xl:max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 xl:px-6 pt-3 pb-8 sm:pt-5 sm:pb-12">
+      <div className="relative z-10 max-w-5xl lg:max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 lg:px-6 pt-3 pb-8 sm:pt-5 sm:pb-12">
         {/* ── Header ── */}
         <header className="text-center mb-5">
           <Image
@@ -155,7 +155,7 @@ export default function SummonRushCalculator() {
             width={800}
             height={200}
             priority
-            className="mx-auto h-auto w-full max-w-[280px] sm:max-w-[300px] xl:max-w-[430px] 2xl:max-w-[520px]"
+            className="mx-auto h-auto w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[460px] 2xl:max-w-[580px]"
           />
         </header>
 
@@ -164,20 +164,20 @@ export default function SummonRushCalculator() {
           className={cn(
             "mb-8 rounded-2xl border border-white/10 backdrop-blur-md",
             "bg-gradient-to-br from-purple-500/10 via-slate-900/50 to-blue-500/10",
-            "p-3 xl:p-4 shadow-xl"
+            "p-3 lg:p-5 shadow-xl"
           )}
         >
-          <div className="flex flex-col min-[900px]:relative min-[900px]:min-h-12 xl:min-h-16 min-[900px]:flex-row items-stretch min-[900px]:items-center gap-3 xl:gap-4">
-            <div className="flex items-center gap-3 xl:gap-4 min-[900px]:w-48 xl:w-64 min-[900px]:flex-shrink-0">
-              <div className="w-9 h-9 xl:w-12 xl:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/30">
-                <Sword size={16} className="text-white xl:hidden" />
-                <Sword size={20} className="text-white hidden xl:block" />
+          <div className="flex flex-col min-[900px]:relative min-[900px]:min-h-12 lg:min-h-16 min-[900px]:flex-row items-stretch min-[900px]:items-center gap-3 lg:gap-4">
+            <div className="flex items-center gap-3 lg:gap-4 min-[900px]:w-48 lg:w-64 min-[900px]:flex-shrink-0">
+              <div className="w-9 h-9 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/30">
+                <Sword size={16} className="text-white lg:hidden" />
+                <Sword size={20} className="text-white hidden lg:block" />
               </div>
-              <div className="w-24 xl:w-36 min-w-0">
-                <p className="text-xs xl:text-sm font-medium text-slate-100 uppercase tracking-wider">
+              <div className="w-24 lg:w-36 min-w-0">
+                <p className="text-xs lg:text-sm font-medium text-slate-100 uppercase tracking-wider">
                   Point Target
                 </p>
-                <p className="text-[10px] xl:text-xs leading-[1.15] text-slate-500">
+                <p className="text-[10px] lg:text-xs leading-[1.15] text-slate-500">
                   Set your summon
                   <br />
                   rush goal
@@ -188,12 +188,12 @@ export default function SummonRushCalculator() {
               className={cn(
                 "flex items-center overflow-hidden rounded-xl",
                 "bg-white/5 border border-white/10",
-                "w-full min-[520px]:w-44 min-[900px]:order-3 min-[900px]:w-48 xl:w-60 2xl:w-64 min-[900px]:ml-auto min-[900px]:flex-shrink-0",
+                "w-full min-[520px]:w-44 min-[900px]:order-3 min-[900px]:w-48 lg:w-60 2xl:w-72 min-[900px]:ml-auto min-[900px]:flex-shrink-0",
                 "focus-within:border-purple-500/50 focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-purple-500/30",
                 "transition-all duration-200"
               )}
             >
-              <span className="self-stretch flex items-center px-3 xl:px-4 text-[10px] xl:text-xs font-bold uppercase tracking-wider text-purple-200 bg-purple-500/15 backdrop-blur-sm border-r border-white/10">
+              <span className="self-stretch flex items-center px-3 lg:px-4 text-[10px] lg:text-xs font-bold uppercase tracking-wider text-purple-200 bg-purple-500/15 backdrop-blur-sm border-r border-white/10">
                 Target
               </span>
               <input
@@ -203,8 +203,8 @@ export default function SummonRushCalculator() {
                 value={target}
                 onChange={handleTargetChange}
                 className={cn(
-                  "min-w-0 flex-1 text-right font-black text-xl xl:text-2xl text-white tabular-nums",
-                  "h-10 xl:h-12 bg-transparent px-3 xl:px-4",
+                  "min-w-0 flex-1 text-right font-black text-xl lg:text-2xl text-white tabular-nums",
+                  "h-10 lg:h-12 bg-transparent px-3 lg:px-4",
                   "focus:outline-none",
                   "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 )}
@@ -213,7 +213,7 @@ export default function SummonRushCalculator() {
             </div>
 
         {/* ── Summary Cards ── */}
-            <div className="grid grid-cols-2 min-[900px]:absolute min-[900px]:left-1/2 min-[900px]:top-1/2 min-[900px]:-translate-x-1/2 min-[900px]:-translate-y-1/2 min-[900px]:grid-cols-3 min-[900px]:w-[40%] min-[900px]:items-center min-[900px]:justify-center gap-3 xl:gap-4">
+            <div className="grid grid-cols-2 min-[900px]:absolute min-[900px]:left-1/2 min-[900px]:top-1/2 min-[900px]:-translate-x-1/2 min-[900px]:-translate-y-1/2 min-[900px]:grid-cols-3 min-[900px]:w-[40%] min-[900px]:items-center min-[900px]:justify-center gap-3 lg:gap-4">
             <SummaryCard
               label="Target Points"
               value={target.toLocaleString()}
@@ -234,14 +234,14 @@ export default function SummonRushCalculator() {
         </div>
 
         {/* ── Progress Bar ── */}
-          <div className="mt-4 xl:mt-5 border-t border-white/10 pt-4 xl:pt-5">
-          <div className="flex items-center justify-between mb-3 xl:mb-4">
-            <span className="text-sm xl:text-base font-medium text-slate-300">
+          <div className="mt-4 lg:mt-5 border-t border-white/10 pt-4 lg:pt-5">
+          <div className="flex items-center justify-between mb-3 lg:mb-4">
+            <span className="text-sm lg:text-base font-medium text-slate-300">
               Summon Rush Progress
             </span>
             <span
               className={cn(
-                "text-sm xl:text-base font-bold tabular-nums",
+                "text-sm lg:text-base font-bold tabular-nums",
                 isGoalMet ? "text-emerald-400" : "text-slate-300"
               )}
             >
@@ -250,7 +250,7 @@ export default function SummonRushCalculator() {
           </div>
 
           {/* Bar track */}
-          <div className="relative h-4 xl:h-5 rounded-full bg-white/5 border border-white/10 overflow-hidden">
+          <div className="relative h-4 lg:h-5 rounded-full bg-white/5 border border-white/10 overflow-hidden">
             <div
               className={cn(
                 "h-full rounded-full transition-all duration-700 ease-out relative overflow-hidden",
@@ -300,9 +300,9 @@ export default function SummonRushCalculator() {
         </div>
 
         <div className="mb-6">
-          <div className="flex items-center justify-between mb-4 xl:mb-5">
-            <h2 className="text-lg xl:text-2xl font-bold text-white flex items-center gap-2 xl:gap-3">
-              <span className="w-1 xl:w-1.5 h-5 xl:h-7 rounded-full bg-gradient-to-b from-purple-400 to-blue-400 inline-block" />
+          <div className="flex items-center justify-between mb-4 lg:mb-5">
+            <h2 className="text-lg lg:text-2xl font-bold text-white flex items-center gap-2 lg:gap-3">
+              <span className="w-1 lg:w-1.5 h-5 lg:h-7 rounded-full bg-gradient-to-b from-purple-400 to-blue-400 inline-block" />
               Your Shards
             </h2>
             <button
@@ -310,19 +310,19 @@ export default function SummonRushCalculator() {
               id="reset-btn"
               className={cn(
                 "flex items-center justify-center gap-2",
-                "h-9 xl:h-11 px-4 xl:px-5 rounded-xl text-sm xl:text-base font-semibold cursor-pointer",
+                "h-9 lg:h-11 px-4 lg:px-5 rounded-xl text-sm lg:text-base font-semibold cursor-pointer",
                 "bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20",
                 "text-slate-300 hover:text-white",
                 "transition-all duration-150 active:scale-95"
               )}
             >
-              <RotateCcw size={14} className="xl:hidden" />
-              <RotateCcw size={16} className="hidden xl:block" />
+              <RotateCcw size={14} className="lg:hidden" />
+              <RotateCcw size={16} className="hidden lg:block" />
               Reset All
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 xl:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
             {allShards.map((shard) => (
               <ShardCard
                 key={shard.id}
