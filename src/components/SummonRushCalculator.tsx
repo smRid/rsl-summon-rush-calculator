@@ -338,7 +338,7 @@ export default function SummonRushCalculator() {
         {/* ── Add Custom Shard ── */}
         {/* ── Action Buttons ── */}
         {/* ── Footer ── */}
-        <footer className="mt-4 text-center">
+        <footer className="mt-15 text-center">
           <p className="text-xs text-slate-700">
             Summon Rush Calculator · Raid: Shadow Legends Utility Tool
           </p>
