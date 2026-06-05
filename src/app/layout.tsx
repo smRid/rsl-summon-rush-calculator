@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Summon Rush Calculator | Raid: Shadow Legends",
   description:
     "Calculate your summon rush points for Raid: Shadow Legends. Track Sacred, Primal, Void, Ancient, and Mystery shards to hit your target with ease.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   keywords: [
     "Raid Shadow Legends",
     "Summon Rush",
