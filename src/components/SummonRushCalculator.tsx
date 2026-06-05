@@ -13,6 +13,7 @@ import ShardCard from "./ShardCard";
 import SummaryCard from "./SummaryCard";
 
 const STORAGE_KEY = "summon-rush-calculator";
+const DEFAULT_TARGET = 3000;
 
 interface SavedState {
   quantities: Record<string, number>;
@@ -31,7 +32,7 @@ function loadFromStorage(): SavedState | null {
 }
 
 export default function SummonRushCalculator() {
-  const [target, setTarget] = useState<number>(5500);
+  const [target, setTarget] = useState<number>(DEFAULT_TARGET);
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [customShards, setCustomShards] = useState<Shard[]>([]);
   const [, setShowAddForm] = useState(false);
@@ -44,7 +45,7 @@ export default function SummonRushCalculator() {
   useEffect(() => {
     const saved = loadFromStorage();
     if (saved) {
-      setTarget(saved.target ?? 5500);
+      setTarget(saved.target ?? DEFAULT_TARGET);
       setQuantities(saved.quantities ?? {});
       setCustomShards(saved.customShards ?? []);
     }
@@ -213,7 +214,7 @@ export default function SummonRushCalculator() {
             </div>
 
         {/* ── Summary Cards ── */}
-            <div className="grid grid-cols-2 min-[900px]:absolute min-[900px]:left-1/2 min-[900px]:top-1/2 min-[900px]:-translate-x-1/2 min-[900px]:-translate-y-1/2 min-[900px]:grid-cols-3 min-[900px]:w-[40%] min-[900px]:items-center min-[900px]:justify-center gap-3 lg:gap-4">
+            <div className="grid grid-cols-3 min-[900px]:absolute min-[900px]:left-1/2 min-[900px]:top-1/2 min-[900px]:-translate-x-1/2 min-[900px]:-translate-y-1/2 min-[900px]:w-[40%] min-[900px]:items-center min-[900px]:justify-center gap-1.5 sm:gap-3 lg:gap-4">
             <SummaryCard
               label="Target Points"
               value={target.toLocaleString()}
@@ -322,7 +323,7 @@ export default function SummonRushCalculator() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-4">
             {allShards.map((shard) => (
               <ShardCard
                 key={shard.id}
@@ -339,10 +340,10 @@ export default function SummonRushCalculator() {
         {/* ── Action Buttons ── */}
         {/* ── Footer ── */}
         <footer className="mt-15 text-center">
-          <p className="text-xs text-slate-700">
+          <p className="text-[10px] sm:text-xs text-slate-700 whitespace-nowrap">
             Summon Rush Calculator · Raid: Shadow Legends Utility Tool
           </p>
-          <p className="text-xs text-slate-700">
+          <p className="text-[10px] sm:text-xs text-slate-700 whitespace-nowrap">
            Develop by - Omor Riduan
           </p>
         </footer>

@@ -100,7 +100,7 @@ export default function ShardCard({
             {shard.name}
           </p>
           <p className="text-[10px] lg:text-sm text-slate-400 mt-0.5">
-            {shard.pointsEach.toLocaleString()} pts each
+            {shard.pointsEach.toLocaleString()} pts
           </p>
         </div>
       </div>
