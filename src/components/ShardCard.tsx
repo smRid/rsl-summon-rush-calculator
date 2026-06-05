@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Shard } from "@/lib/shards";
@@ -18,8 +19,6 @@ export default function ShardCard({
   onQuantityChange,
   onDelete,
 }: ShardCardProps) {
-  const points = quantity * shard.pointsEach;
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(e.target.value, 10);
     if (!isNaN(val) && val >= 0) {
@@ -40,9 +39,9 @@ export default function ShardCard({
   return (
     <div
       className={cn(
-        "group relative rounded-2xl border border-white/10 backdrop-blur-md",
+        "group relative rounded-xl border border-white/10 backdrop-blur-md",
         "bg-gradient-to-br from-white/[0.06] to-white/[0.02]",
-        "p-4 flex flex-col gap-3",
+        "p-3 flex flex-col gap-2",
         "transition-all duration-300",
         "hover:border-white/20 hover:shadow-xl hover:scale-[1.01]",
         quantity > 0 && "border-white/15"
@@ -71,51 +70,47 @@ export default function ShardCard({
       )}
 
       {/* Top: icon + name */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
         {/* Shard icon orb */}
         <div
           className={cn(
-            "w-12 h-12 rounded-xl flex items-center justify-center text-2xl",
+            "w-10 h-10 rounded-lg flex items-center justify-center text-xl",
             "bg-gradient-to-br",
             shard.gradient,
-            "shadow-lg flex-shrink-0"
+            "shadow-lg flex-shrink-0 overflow-hidden"
           )}
           style={{ boxShadow: `0 4px 15px ${shard.glowColor}` }}
         >
-          {shard.emoji}
+          {shard.imageSrc ? (
+            <Image
+              src={shard.imageSrc}
+              alt=""
+              width={40}
+              height={40}
+              className="h-full w-full object-contain p-1"
+            />
+          ) : (
+            shard.emoji
+          )}
         </div>
 
         <div className="flex-1 min-w-0">
-          <p className="font-semibold text-white text-sm leading-tight truncate">
+          <p className="font-semibold text-white text-xs leading-tight truncate">
             {shard.name}
           </p>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-[10px] text-slate-400 mt-0.5">
             {shard.pointsEach.toLocaleString()} pts each
           </p>
         </div>
       </div>
 
-      {/* Points badge */}
-      <div className="flex items-center justify-between">
-        <span className="text-xs text-slate-500">Total from this</span>
-        <span
-          className={cn(
-            "text-sm font-bold tabular-nums transition-all duration-200",
-            quantity > 0 ? "text-white" : "text-slate-600"
-          )}
-          style={{ color: quantity > 0 ? shard.color : undefined }}
-        >
-          {points.toLocaleString()} pts
-        </span>
-      </div>
-
       {/* Quantity controls */}
-      <div className="flex items-center gap-2">
+      <div className="grid grid-cols-[1.75rem_minmax(0,1fr)_1.75rem] items-center gap-1.5 min-w-0">
         <button
           onClick={handleDecrement}
           disabled={quantity === 0}
           className={cn(
-            "w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0",
+            "w-7 h-7 rounded-lg flex items-center justify-center cursor-pointer",
             "border border-white/10 bg-white/5",
             "transition-all duration-150 active:scale-95",
             "hover:bg-white/10 hover:border-white/20",
@@ -123,7 +118,7 @@ export default function ShardCard({
           )}
           aria-label="Decrease quantity"
         >
-          <Minus size={14} className="text-white" />
+          <Minus size={12} className="text-white" />
         </button>
 
         <input
@@ -132,9 +127,9 @@ export default function ShardCard({
           value={quantity}
           onChange={handleInputChange}
           className={cn(
-            "flex-1 text-center font-bold text-white tabular-nums",
-            "bg-white/5 border border-white/10 rounded-xl",
-            "h-9 px-2 text-sm",
+            "min-w-0 w-full text-center font-bold text-white tabular-nums",
+            "bg-white/5 border border-white/10 rounded-lg",
+            "h-7 px-1.5 text-xs",
             "focus:outline-none focus:border-white/30 focus:bg-white/10",
             "transition-all duration-150",
             "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
@@ -146,7 +141,7 @@ export default function ShardCard({
         <button
           onClick={handleIncrement}
           className={cn(
-            "w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0",
+            "w-7 h-7 rounded-lg flex items-center justify-center cursor-pointer",
             "transition-all duration-150 active:scale-95",
             "text-white font-bold"
           )}
@@ -156,14 +151,14 @@ export default function ShardCard({
           }}
           aria-label="Increase quantity"
         >
-          <Plus size={14} />
+          <Plus size={12} />
         </button>
       </div>
 
       {/* Glow overlay when active */}
       {quantity > 0 && (
         <div
-          className="absolute inset-0 rounded-2xl pointer-events-none opacity-5"
+          className="absolute inset-0 rounded-xl pointer-events-none opacity-5"
           style={{
             background: `radial-gradient(circle at 50% 0%, ${shard.color}, transparent 70%)`,
           }}

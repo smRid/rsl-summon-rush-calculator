@@ -61,7 +61,7 @@ export default function SummaryCard({
   return (
     <div
       className={cn(
-        "relative rounded-2xl border backdrop-blur-sm p-4 flex flex-col gap-2",
+        "relative rounded-lg border backdrop-blur-sm px-2 py-1.5 pr-6 flex flex-col",
         "bg-gradient-to-br",
         colors.bg,
         colors.border,
@@ -72,24 +72,26 @@ export default function SummaryCard({
       )}
     >
       {/* Top row */}
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">
+      <div className="flex items-center">
+        <span className="text-[9px] font-medium text-slate-400 uppercase tracking-wide whitespace-nowrap">
           {label}
         </span>
-        <div
-          className={cn(
-            "w-7 h-7 rounded-lg flex items-center justify-center",
-            "bg-white/5"
-          )}
-        >
-          <Icon size={14} className={colors.icon} />
-        </div>
+      </div>
+
+      <div
+        className={cn(
+          "absolute right-1.5 top-1/2 -translate-y-1/2",
+          "w-5 h-5 rounded-md flex items-center justify-center",
+          "bg-white/5"
+        )}
+      >
+        <Icon size={12} className={colors.icon} />
       </div>
 
       {/* Value */}
       <div
         className={cn(
-          "text-2xl font-bold tabular-nums",
+          "text-base leading-tight font-bold tabular-nums",
           colors.value
         )}
       >
@@ -97,7 +99,7 @@ export default function SummaryCard({
       </div>
 
       {/* Subtle shine overlay */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
     </div>
   );
 }
