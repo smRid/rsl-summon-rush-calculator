@@ -20,10 +20,11 @@ export default function ShardCard({
   onDelete,
 }: ShardCardProps) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = parseInt(e.target.value, 10);
+    const normalized = e.target.value.replace(/\D/g, "").replace(/^0+(?=\d)/, "");
+    const val = parseInt(normalized, 10);
     if (!isNaN(val) && val >= 0) {
       onQuantityChange(shard.id, val);
-    } else if (e.target.value === "") {
+    } else if (normalized === "") {
       onQuantityChange(shard.id, 0);
     }
   };
@@ -122,10 +123,12 @@ export default function ShardCard({
         </button>
 
         <input
-          type="number"
-          min="0"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           value={quantity}
           onChange={handleInputChange}
+          onFocus={(e) => e.currentTarget.select()}
           className={cn(
             "min-w-0 w-full text-center font-bold text-white tabular-nums",
             "bg-white/5 border border-white/10 rounded-lg",
