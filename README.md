@@ -21,13 +21,13 @@ A sleek, dark-fantasy utility tool for **Raid: Shadow Legends** players to plan 
 
 ## 🛠️ Tech Stack
 
-| Tool | Purpose |
-|---|---|
-| [Next.js 16](https://nextjs.org) | App framework (App Router) |
-| [TypeScript](https://typescriptlang.org) | Type safety |
-| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling |
-| [Lucide React](https://lucide.dev) | Icons |
-| `localStorage` | Client-side persistence |
+| Tool                                       | Purpose                    |
+| ------------------------------------------ | -------------------------- |
+| [Next.js 16](https://nextjs.org)           | App framework (App Router) |
+| [TypeScript](https://typescriptlang.org)   | Type safety                |
+| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling      |
+| [Lucide React](https://lucide.dev)         | Icons                      |
+| `localStorage`                             | Client-side persistence    |
 
 ## 🚀 Getting Started
 
@@ -57,14 +57,3 @@ src/
     ├── shards.ts           # Default shard data
     └── utils.ts            # cn() class merge utility
 ```
-
-## 🏗️ Build for Production
-
-```bash
-npm run build
-npm start
-```
-
----
-
-Made with ❤️ by **Omor Riduan**
