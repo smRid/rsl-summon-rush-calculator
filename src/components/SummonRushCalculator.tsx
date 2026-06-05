@@ -5,7 +5,6 @@ import {
   RotateCcw,
   CheckCircle2,
   Sword,
-  ChevronLeft,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DEFAULT_SHARDS, CUSTOM_SHARD_COLORS, Shard } from "@/lib/shards";
@@ -165,7 +164,7 @@ export default function SummonRushCalculator() {
             "p-3 shadow-xl"
           )}
         >
-          <div className="flex flex-col min-[900px]:flex-row items-stretch min-[900px]:items-center gap-3">
+          <div className="flex flex-col min-[900px]:relative min-[900px]:min-h-12 min-[900px]:flex-row items-stretch min-[900px]:items-center gap-3">
             <div className="flex items-center gap-3 min-[900px]:w-48 min-[900px]:flex-shrink-0">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/30">
                 <Sword size={16} className="text-white" />
@@ -181,8 +180,18 @@ export default function SummonRushCalculator() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center justify-end gap-2 w-full min-[520px]:w-36 min-[900px]:order-3 min-[900px]:w-40 min-[900px]:ml-auto min-[900px]:flex-shrink-0">
-              <ChevronLeft size={14} className="text-slate-600 hidden min-[900px]:block" />
+            <div
+              className={cn(
+                "flex items-center overflow-hidden rounded-xl",
+                "bg-white/5 border border-white/10",
+                "w-full min-[520px]:w-44 min-[900px]:order-3 min-[900px]:w-48 min-[900px]:ml-auto min-[900px]:flex-shrink-0",
+                "focus-within:border-purple-500/50 focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-purple-500/30",
+                "transition-all duration-200"
+              )}
+            >
+              <span className="self-stretch flex items-center px-3 text-[10px] font-bold uppercase tracking-wider text-purple-200 bg-purple-500/15 backdrop-blur-sm border-r border-white/10">
+                Target
+              </span>
               <input
                 id="target-input"
                 type="number"
@@ -190,11 +199,9 @@ export default function SummonRushCalculator() {
                 value={target}
                 onChange={handleTargetChange}
                 className={cn(
-                  "w-full text-right font-black text-xl text-white tabular-nums",
-                  "bg-white/5 border border-white/10 rounded-xl",
-                  "h-10 px-3",
-                  "focus:outline-none focus:border-purple-500/50 focus:bg-white/10 focus:ring-1 focus:ring-purple-500/30",
-                  "transition-all duration-200",
+                  "min-w-0 flex-1 text-right font-black text-xl text-white tabular-nums",
+                  "h-10 bg-transparent px-3",
+                  "focus:outline-none",
                   "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 )}
                 aria-label="Target points"
@@ -202,7 +209,7 @@ export default function SummonRushCalculator() {
             </div>
 
         {/* ── Summary Cards ── */}
-            <div className="grid grid-cols-2 min-[900px]:order-2 min-[900px]:grid-cols-3 min-[900px]:w-[40%] min-[900px]:flex-none min-[900px]:mx-auto min-[900px]:items-center min-[900px]:justify-center gap-3">
+            <div className="grid grid-cols-2 min-[900px]:absolute min-[900px]:left-1/2 min-[900px]:top-1/2 min-[900px]:-translate-x-1/2 min-[900px]:-translate-y-1/2 min-[900px]:grid-cols-3 min-[900px]:w-[40%] min-[900px]:items-center min-[900px]:justify-center gap-3">
             <SummaryCard
               label="Target Points"
               value={target.toLocaleString()}
@@ -329,6 +336,9 @@ export default function SummonRushCalculator() {
         <footer className="mt-12 text-center">
           <p className="text-xs text-slate-700">
             Summon Rush Calculator · Raid: Shadow Legends Utility Tool
+          </p>
+          <p className="text-xs text-slate-700">
+           Develop by - Omor Riduan
           </p>
         </footer>
       </div>
